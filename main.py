@@ -23,6 +23,22 @@ def start_quiz():
 
     return redirect('/quiz')
 
+@app.route('/quiz')
+def quiz_question():
+    """ Отображение текущего вопроса викторины """
+    question_index = session.get('current_question_index')
+    questions = session.get('questions')
+
+    if question_index < len(questions):
+        current_question_data = questions[question_index]
+        return render_template('question_page.html',
+                               question = current_question_data,
+                               question_number = question_index + 1,
+                               total_question = len(questions),
+                               page_title = f'Вопрос {question_index + 1}')
+    else:
+        pass
+
 # --- Маршруты для простой админ-панели ---
 
 database.init_database()
