@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<div class="question-container">
+    <h3> Вопрос {{question_number}} из {{total_question}} </h3>
+    <p class="question-text"> {{question.question_text}} </p>
+    <form action="/answer" method="POST">
+        <ul class="options-list">
+            <li>
+                <input type="radio" id="option0" name="answer" value="0" required>
+                <label for="option0"> {{question.option1}} </label>
+            </li>
+            <li>
+                <input type="radio" id="option1" name="answer" value="1">
+                <label for="option1"> {{question.option2}} </label>
+            </li>
+            <li>
+                <input type="radio" id="option2" name="answer" value="1">
+                <label for="option2"> {{question.option3}} </label>
+            </li>
+            <li>
+                <input type="radio" id="option3" name="answer" value="1">
+                <label for="option3"> {{question.option4}} </label>
+            </li>
+        </ul>
+        <button type="submit" class="button-submit-answer">Ответить</button>
+    </form>
+</div>
+
+{% endblock %}
