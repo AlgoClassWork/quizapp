@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.main-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Навигация */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+}
+.nav-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav-brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+.nav-links li {
+    margin-left: 20px;
+}
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active {
+    background-color: #555;
+}
+
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+}
+h2 { margin-bottom: 20px; }
+
+.start-page, .results-container, .admin-container, .question-container {
+    text-align: center;
+}
+
+.button-start, .button-submit-answer, .button-play-again, .button-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: background-color 0.2s ease-in-out;
+}
+.button-start:hover, .button-submit-answer:hover, .button-play-again:hover, .button-submit:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для страницы вопросов */
+.question-text {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+}
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto 20px auto;
+    max-width: 400px; 
+    text-align: left;
+}
+.options-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+}
+.options-list li label {
+    margin-left: 10px;
+    cursor: pointer;
+    width: 100%;
+    display: inline-block;
+}
+.options-list input[type="radio"] {
+    cursor: pointer;
+}
+
+/* Стили для результатов */
+.result-message { font-weight: bold; font-size: 1.2em; }
+.excellent { color: green; }
+.good { color: darkolivegreen; }
+.fair { color: orange; }
+.poor { color: red; }
+
+/* Стили для админ-формы */
+.add-question-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.form-group input[type="text"],
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+.form-group textarea {
+    resize: vertical;
+}
+.form-group small {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+}
+
+footer {
+    text-align: center;
+    margin-top: 30px;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+    color: #777;
+    font-size: 0.9em;
+}

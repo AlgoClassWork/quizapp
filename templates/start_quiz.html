@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="start-page">
+    <h2>Добро пожаловать в Викторину!</h2>
+    <p>Готовы проверить свои знания?</p>
+    <form action="/start-quiz" method="POST">
+        <button type="submit" class="button-start">Начать Викторину!</button>
+    </form>
+</div>
+{% endblock %}
