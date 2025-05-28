@@ -1,6 +1,6 @@
 import os
 import database
-from flask import Flask, render_template, redirect, session
+from flask import Flask, render_template, redirect, session, request
 
 app = Flask(__name__)
 app.secret_key = os.urandom(24) 
@@ -40,6 +40,21 @@ def quiz_question():
                                page_title = f'Вопрос {question_index + 1}')
     else:
         pass
+
+@app.route('/answer', methods=['POST'])
+def submit_answer():
+    """Обработка ответа пользователя на вопрос"""
+    question_index = session.get('current_question_index')
+    questions = session.get('questions')
+
+    user_answer_index = int(request.form.get('answer'))
+    corret_answer_index = questions[question_index]['correct_option_index']
+
+    if user_answer_index == corret_answer_index:
+        session['score'] += 1
+
+    session['current_question_index'] += 1
+    return redirect('/quiz')
 
 # --- Маршруты для простой админ-панели ---
 
