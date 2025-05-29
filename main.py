@@ -39,7 +39,7 @@ def quiz_question():
                                total_question = len(questions),
                                page_title = f'Вопрос {question_index + 1}')
     else:
-        pass
+        return redirect('/results')
 
 @app.route('/answer', methods=['POST'])
 def submit_answer():
@@ -56,7 +56,21 @@ def submit_answer():
     session['current_question_index'] += 1
     return redirect('/quiz')
 
+@app.route('/results')
+def results():
+    score = session.get('score')
+    total_questions = len( session.get('questions') )
+    return render_template('results_page.html',
+                           score = score,
+                           total_questions = total_questions)
+
 # --- Маршруты для простой админ-панели ---
+@app.route('/admin/add', methods=['GET', 'POST'])
+def admin_add_question_page():
+    if request.method == 'GET':
+        return render_template('admin_add_question.html')
+    if request.method == 'POST':
+        pass
 
 database.init_database()
 app.run(debug=True) 

@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="results-container">
+    <h2>Результат Викторины</h2>
+    <p> Вы ответили на {{score}} из {{total_questions}} вопросов </p>
+    {% set result = (score/ total_questions * 100) %}
+    <p> Ваш результат: {{result}} </p>
+    {% if result == 100 %}
+        <p class="result-message"> Отлично вы все знаете! </p>
+    {% elif result >= 50 %}
+        <p class="result-message"> Не плохо но можно лучше! </p>
+    {% else %}
+        <p class="result-message"> Стоит подтянуть знания! </p>
+    {% endif %}
+    <div class="actions">
+        <a href="/" class="button-play-again">Играть еще раз</a>
+    </div>
+</div>
+{% endblock %}

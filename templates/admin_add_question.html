@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="admin-container">
+    <h2>Добавить вопрос</h2>
+    <form action="/admin/add" method="POST" class="add-question-form">
+        <div class="form-group">
+            <label for="questions_text"> Текст вопроса:</label>
+            <textarea id="questions_text" name="questions_text" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="option1"> Вариант ответа 1:</label>
+            <input id="option1" name="option1" required>
+        </div>
+        <div class="form-group">
+            <label for="option2"> Вариант ответа 2:</label>
+            <input id="option2" name="option2" required>
+        </div>
+        <div class="form-group">
+            <label for="option3"> Вариант ответа 3:</label>
+            <input id="option3" name="option3" required>
+        </div>
+        <div class="form-group">
+            <label for="option4"> Вариант ответа 4:</label>
+            <input id="option4" name="option4" required>
+        </div>
+
+        <div class="form-group">
+            <label for="correct_option_index"> Номер правильного ответа:</label>
+            <select id="correct_option_index" name="correct_option_index" required>
+                <option value="0"> Вариант 1</option>
+                <option value="1"> Вариант 2</option>
+                <option value="2"> Вариант 3</option>
+                <option value="3"> Вариант 4</option>
+            </select>
+        </div>
+
+        <button type="submit" class="button-submit"> Добавить вопрос </button>
+    </form>
+</div>
+
+{% endblock %}
