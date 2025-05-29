@@ -70,7 +70,14 @@ def admin_add_question_page():
     if request.method == 'GET':
         return render_template('admin_add_question.html')
     if request.method == 'POST':
-        pass
+        question_text = request.form.get('questions_text')
+        option1 = request.form.get('option1')
+        option2 = request.form.get('option2')
+        option3 = request.form.get('option3')
+        option4 = request.form.get('option4')
+        correct_option_index = request.form.get('correct_option_index')
+        database.add_new_question(question_text, option1, option2, option3, option4, correct_option_index)
+        return redirect('/admin/add')
 
 database.init_database()
 app.run(debug=True) 
